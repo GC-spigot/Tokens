@@ -1,0 +1,166 @@
+messages:
+  miscellaneous:
+    update-message:
+      - "&a&lTOKENS &8!>> &fA update was found! &fVersion &a%version% &fis available."
+  player:
+    help:
+      - " "
+      - "  &aTokens &8!>> &fAvailable Commands"
+      - " "
+      - "  &8!>> &a/tokens pay (name) (amount)"
+      - "  &8!>> &a/tokens balance"
+      - "  &8!>> &a/tokens withdraw (amount)"
+      - " "
+    menu:
+      # On default, we don't say anything to users when opening the enchant menu (if enabled)
+      - ""
+    pay:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens pay (name) (amount)"
+      invalid-target:
+        - "&a&lTOKENS &8!>> &fYou must specify a target."
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      not-enough-tokens:
+        - "&a&lTOKENS &8!>> &fYou do not have enough tokens. You need at least &a%needed% &ftokens."
+      successful:
+        sender:
+          - "&a&lTOKENS &8!>> &fYou have paid &a%token% &ftokens to &a%recipient%&f."
+        recipient:
+          - "&a&lTOKENS &8!>> &fYou have received &a%token% &ftokens from &a%sender%&f."
+    balance:
+      self:
+        - "&a&lTOKENS &8!>> &fYou currently have &a%token% &ftokens."
+      other:
+        - "&a&lTOKENS &8!>> &a%player% &fcurrently has &a%token% &ftokens."
+    withdraw:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens withdraw (amount) [drop]"
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      not-enough-tokens:
+        - "&a&lTOKENS &8!>> &fYou do not have enough tokens. You need at least &a%needed% &ftokens."
+      not-enough-space:
+        - "&a&lTOKENS &8!>> &fInventory is full! &a%token% &ftokens could not be withdrawn!"
+      successful:
+        withdrawn:
+          - "&a&lTOKENS &8!>> &fYou have withdrawn &a%token% &ftokens."
+        exchange:
+          - "&a&lTOKENS &8!>> &a+%token% &ftoken(s) has been added to your account."
+    invalid-argument:
+      - "&a&lTOKENS &8!>> &a%argument% &fis not a optional sub argument."
+  admin:
+    help:
+      - " "
+      - "                    &a&lTOKENS &8!>> &fBy SoloDevelopment"
+      - "                      &a[ ] &7= Required, &f( ) &7= Optional"
+      - " "
+      - "  &8!>> &f/tokens set &a[name] [amount]"
+      - "  &8!>> &f/tokens add &a[name] [amount]"
+      - "  &8!>> &f/tokens remove &a[name] [amount]"
+      - "  &8!>> &f/tokens balance [name]"
+      - "  &8!>> &f/tokens withdraw &a[amount]"
+      - "  &8!>> &f/tokens enchant &a[name] [enchant] &f(level) (free)"
+      - "  &8!>> &f/tokens book &a[name] [enchant]"
+      - "  &8!>> &f/tokens list"
+      - "  &8!>> &f/tokens region"
+      - "  &8!>> &f/tokens wand"
+      - "  &8!>> &f/tokens reload"
+      - " "
+    set:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens set (name) (amount)"
+      invalid-target:
+        - "&a&lTOKENS &8!>> &fYou must specify a target."
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      successful:
+        - "&a&lTOKENS &8!>> &fYou have set &a%token% &ftokens for &a%player%&f."
+    add:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens add (name) (amount)"
+      invalid-target:
+        - "&a&lTOKENS &8!>> &fYou must specify a target."
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      successful:
+        - "&a&lTOKENS &8!>> &fYou have added &a%token% &ftokens to &a%player%&f."
+    remove:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens remove (name) (amount)"
+      invalid-target:
+        - "&a&lTOKENS &8!>> &fYou must specify a target."
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      successful:
+        - "&a&lTOKENS &8!>> &fYou have removed &a%token% &ftokens from &a%player%&f."
+    balance:
+      self:
+        - "&a&lTOKENS &8!>> &fYou currently have &a%token% &ftokens."
+      other:
+        - "&a&lTOKENS &8!>> &a%player% &fcurrently has &a%token% &ftokens."
+    withdraw:
+      usage:
+        - "&a&lTOKENS &8!>> &a/tokens withdraw [amount] (drop)"
+      invalid-long:
+        - "&a&lTOKENS &8!>> &fSorry, something went wrong."
+      not-enough-tokens:
+        - "&a&lTOKENS &8!>> &fYou do not have enough tokens. You need at least &a%needed% &ftokens."
+      not-enough-space:
+        - "&a&lTOKENS &8!>> &fInventory is full! &a%token% &ftokens could not be withdrawn!"
+      successful:
+        withdrawn:
+          - "&a&lTOKENS &8!>> &fYou have withdrawn &a%token% &ftokens."
+        exchange:
+          - "&a&lTOKENS &8!>> &a+%token% &ftoken(s) has been added to your account."
+    enchant:
+      usage:
+        - "&8!>> &a/tokens enchant [name] [enchant] (level) (free)"
+      invalid-target:
+        - "&a&lTOKENS &8!>> &fYou must specify a target."
+      invalid-enchantment:
+        - "&a&lTOKENS &8!>> &fThat (&a%enchant%&f) is not a valid enchant. Please specify the enchant listed in it's file."
+      invalid-material:
+        - "&a&lTOKENS &8!>> &fYou cannot enchant the item you're holding."
+      max-level:
+        - "&a&lTOKENS &8!>> &fYour item has already maxed out on &a%enchant% &fenchantment."
+      not-enough-tokens:
+        - "&a&lTOKENS &8!>> &fYou do not have enough tokens. You need at least &a%needed% &ftokens."
+      successful:
+        - "&a&lTOKENS &8!>> &a+%addedlevel% &f%enchant% &fenchantment level. &a%token% &ftokens have been deducted."
+    region:
+      help:
+        - " "
+        - "                    &a&lTOKENS &8!>> &fBy SoloDevelopment"
+        - "                      &a[ ] &7= Required, &f( ) &7= Optional"
+        - " "
+        - "  &8!>> &a/tokens region create [name]"
+        - "  &8!>> &a/tokens region delete [name]"
+        - "  &8!>> &a/tokens region set [name]"
+        - "  &8!>> &a/tokens region list"
+        - " "
+      create:
+        usage:
+          - "&8!>> &a/tokens region create [name]"
+        region-exists:
+          - "&a&lTOKENS &8!>> &a%region% &fregion already exists."
+        successful:
+          - "&a&lTOKENS &8!>> &a%region% &fregion created."
+      delete:
+        usage:
+          - "&8!>> &a/tokens region delete [name]"
+        invalid-region:
+          - "&a&lTOKENS &8!>> &a%region% &fregion doesn't exist."
+        successful:
+          - "&a&lTOKENS &8!>> &a%region% &fregion deleted."
+      set:
+        usage:
+          - "&8!>> &a/tokens region set [name]"
+        invalid-region:
+          - "&a&lTOKENS &8!>> &a%region% &fregion doesn't exist."
+        incomplete-selection:
+          - "&a&lTOKENS &8!>> &fYour region selection was invalid. Perhaps it was unfinished / cross-world?"
+        successful:
+          - "&a&lTOKENS &8!>> &a%region% &fregion &asuccessfully &fupdated."
+    invalid-argument:
+      - "&a&lTOKENS &8!>> &a%argument% &fis not a optional sub argument."
