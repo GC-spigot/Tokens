@@ -1,0 +1,113 @@
+# This is the main configuration file for Tokens.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use with caution,
+# and make sure you know what each option does before configuring.
+#
+# If you need help with the configuration or have any questions related to Tokens.
+# Ask via our discussion page on Spigot.
+
+# System Configuration
+# Change identifier to what you'd like the main system to be known as
+# Example if you want a gems currency change tokens -> gems, or if you want a crystals currency change tokens -> crystals.
+# Aliases are only for commands to access the main command.
+
+system:
+  identifier: tokens
+  aliases:
+    - "token"
+
+# Fortune Configuration
+# We use our own custom fortune system offering the most optimized setting even with the most drops.
+fortune:
+  drops:
+    minimum: 1
+    maximum: 1000
+  options:
+    random-drop: false
+  blocks:
+    - COAL_BLOCK
+    - IRON_BLOCK
+    - STONE
+    - GOLD_BLOCK
+
+# Menu Configuration
+# actions: Choose which interaction when holding a specific type of item from items: will open the menu!
+# Want to require the user to shift? then put SHIFT: before the action itself such as 'SHIFT:RIGHT_CLICK_BLOCK'
+menu:
+  options:
+    enabled: true
+  actions:
+    - 'SHIFT:RIGHT_CLICK_BLOCK'
+    - 'SHIFT:RIGHT_CLICK_AIR'
+  # List below additional commands you may want to open the menu and it'll open it as long as they have a valid item in hand.
+  commands:
+    - "upgrade"
+    - "enchant"
+
+# Token Item Configuration
+# Placeholders:
+# %amount% - The amount withdrew (this is modified dependent on tokens-per)
+# Below will allow configuration on the token item when using /tokens withdraw.
+token-item:
+  settings:
+    name: "&lTokens"
+    # Our naming system is very specific and requires the naming of the materials to be in CAPS.
+    material: BLAZE_POWDER
+    # Lore Configuration:
+    # You can disable lore by setting lore to:
+    # lore: NONE
+    lore:
+      - "&7Tokens &b%amount%"
+  options:
+    # What does token-per mean?
+    # If a player requests 100 tokens and does /tokens withdraw 100 (this means that each token is worth 1)
+    # By setting tokens-per to 0, it'll make that you are given only one token item for the total amount withdrawn.
+    tokens-per: 1
+
+# Inventory Full Configuration
+# Below will allow you to configure a built-in feature of when inventories are full while mining.
+inventory-full:
+  options:
+    sound: false
+    chat: true
+    title: true
+    toggle-command: true
+  configuration:
+    sound: NOTE_PLING
+    chat:
+      - "&8&m--**-------------**--"
+      - "          &c&lALERT"
+      - "&fYour Inventory Is Full!"
+      - "&8&m--**-------------**--"
+    title:
+      primary: "&cALERT"
+      secondary: "&fYour Inventory Is Full!"
+    toggle:
+      enabled:
+        - "&a&lTOKENS &8!>> &fYou have &aenabled &finventory-full messages."
+      disabled:
+        - "&a&lTOKENS &8!>> &fYou have &cdisabled &finventory-full messages."
+
+# Worlds Configuration
+# Below will allow you to configure what worlds will not work for enchantments.
+disabled-worlds: []
+
+# Per Block Configuration
+# Below will allow you to configure what can happen when people break blocks.
+# You can leave enchant: [], if you'd like nothing to be executed.
+#
+# Requirements:
+# $BEACON$,[COMMAND] beacons give %player% 1
+#
+# Options:
+# [COMMAND] beacons give %player% 1 - Execute commands as console.
+# [TOKEN] +x - Adds x amount to their balance.
+# [XP] +x - Adds x amount of xp to their XP.
+block-broken:
+  player:
+    - "[TOKEN] +1"
+  enchant: []
+
+# Glow Configuration
+# Below will allow you to configure whether or not enchantments should make the pickaxe glow.
+
+enchant-glow: true
