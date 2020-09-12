@@ -1,0 +1,82 @@
+menu:
+  name: "&7&lENCHANT MENU"
+  size: 27
+  sounds:
+    opening:
+      enabled: true
+      name:
+    closing:
+      enabled: true
+      name:
+    upgrade:
+      enabled: true
+      name:
+    not-enough-tokens:
+      enabled: true
+      name:
+  list:
+    - pane
+    - pane
+    - pane
+    - pane
+    - pickaxe
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - Efficiency
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pane
+    - pickaxe
+    - pane
+    - pane
+    - pane
+    - pane
+  items:
+    pane:
+      item:
+        name: "&b"
+        lore: NONE
+      material:
+        name: STAINED_GLASS_PANE
+        data: 7 # Used only if you are server version before 1.13.
+    pickaxe:
+      item:
+        name: "&b"
+        lore: NONE
+      material:
+        name: DIAMOND_PICKAXE
+        data: 0 # Used only if you are server version before 1.13.
+    Efficiency:
+      item:
+        name: "&aEfficiency"
+        lore:
+          - "&8$> &7Ability to mine blocks faster."
+          - ""
+          - "&8&l!>> &e&lPRICE &8!>> &f%systemIdentifier_Efficiency_cost% Tokens"
+          - "&8&l!>> &e&lCURRENT LEVEL &8!>> &f%systemIdentifier_Efficiency_level%"
+          - "&8&l!>> &e&lMAX LEVEL &8!>> &f%systemIdentifier_Efficiency_max_format%"
+          - ""
+          - "&8&l!>> &fLeft-Click &7To Add &f1 &7Level"
+          - "&8&l!>> &fMiddle-Click &7To Add &f10 &7Level"
+          - "&8&l!>> &fRight-Click &7To Add &f100 &7Levels"
+      material:
+        name: BOOK
+        data: 0 # Used only if you are server version before 1.13.
+      actions:
+        left:
+          - "[ENCHANT] Efficiency"
+        middle:
+          - "[ENCHANT] Efficiency +10"
+        right:
+          - "[ENCHANT] Efficiency +100"
