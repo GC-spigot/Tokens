@@ -42,6 +42,9 @@ menu:
   commands:
     - "upgrade"
     - "enchant"
+  # Use this list if you want to override the normal behavior of this menu handler with your own command execute. Leave empty if you just want menu to open
+  # The commands aliases from above will also execute the commands in this list
+  execute-commands: []
 
 # Token Item Configuration
 # Placeholders:
@@ -71,6 +74,7 @@ inventory-full:
     chat: true
     title: true
     toggle-command: true
+    cooldown: 5 #in seconds
   configuration:
     sound: NOTE_PLING
     chat:
