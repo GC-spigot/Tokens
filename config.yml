@@ -1,3 +1,8 @@
+# Tokens
+# Config Version: 2.9.2
+
+# Tokens Wiki: https://tokens.advancedplugins.net
+
 # This is the main configuration file for Tokens.
 # As you can see, there's tons to configure. Some options may impact gameplay, so use with caution,
 # and make sure you know what each option does before configuring.
@@ -15,6 +20,13 @@ system:
   aliases:
     - "token"
 
+
+# Hooks Configuration
+# Turn those off if you do not need the behavior of that hook (for example ezblocks) to be active
+hooks:
+  # This will disable ezblocks hooks, so the explosive enchants won't count all the blocks.
+  ezblocks: true
+
 # Fortune Configuration
 # We use our own custom fortune system offering the most optimized setting even with the most drops.
 fortune:
@@ -28,6 +40,8 @@ fortune:
     - IRON_BLOCK
     - STONE
     - GOLD_BLOCK
+
+
 
 # Menu Configuration
 # actions: Choose which interaction when holding a specific type of item from items: will open the menu!
@@ -45,6 +59,11 @@ menu:
   # Use this list if you want to override the normal behavior of this menu handler with your own command execute. Leave empty if you just want menu to open
   # The commands aliases from above will also execute the commands in this list
   execute-commands: []
+  # The blacklist of blocks that when interacted with will not trigger the menu to open | e.g. you might not want the menu to open when interacting with a chest for example
+  block-blacklist: []
+  # The list of items that will trigger the menu | Use material names e.g. DIAMOND_PICKAXE | This has a contains, so using PICKAXE will allow all PICKAXES to work
+  items:
+    - "PICKAXE"
 
 # Token Item Configuration
 # Placeholders:
@@ -100,16 +119,26 @@ disabled-worlds: []
 # You can leave enchant: [], if you'd like nothing to be executed.
 #
 # Requirements:
-# $BEACON$,[COMMAND] beacons give %player% 1
+# [COMMAND] beacons give %player% 1
 #
 # Options:
 # [COMMAND] beacons give %player% 1 - Execute commands as console.
 # [TOKEN] +x - Adds x amount to their balance.
 # [XP] +x - Adds x amount of xp to their XP.
+# [MESSAGE] &bYou have received &a%blocks% &btokens as a reward.
+#
+# Math parsing can be used here by wrapping the formula using <math></math> | e.g. "[TOKEN] +<math>%blocks%/2</math>"
+# Accepted placeholders: - %blocks% - the number of blocks mined | %player% - gets the player name - useful for commands
 block-broken:
   player:
     - "[TOKEN] +1"
   enchant: []
+
+## Explosion Configuration
+explode:
+  # Add blocks to this list that you want ignored for the explosion enchants like Shockwave, Sphered, Nuke, etc.
+  # Useful for compatibility with plugins like crates and such, where the block break would destroy the chest without giving items
+  block-blacklist: []
 
 # Glow Configuration
 # Below will allow you to configure whether or not enchantments should make the pickaxe glow.
